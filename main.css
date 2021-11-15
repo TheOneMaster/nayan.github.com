@@ -4,9 +4,15 @@ html {
     --subtitle: hsl(0, 0%, 33%);
 
     /* Accent color data */
-    --accent-color-primary: hsl(0, 40%, 33%);
-    
-    
+    --accent-color-primary: hsl(0, 40%, 33%);  
+}
+
+html.dark-theme {
+    --bg-color: hsl(0, 0%, 7%);
+    --text-color: hsl(0, 0%, 87%);
+    --subtitle: hsl(0, 0%, 60%);
+
+    --accent-color-primary: hsl(0, 40%, 50%);
 }
 
 body {
@@ -43,7 +49,6 @@ a:hover {
 }
 
 .project {
-    padding-bottom: 0.5em;
     border-bottom-style: dotted;
     border-bottom-width: 1px;
 }
@@ -83,10 +88,6 @@ a:hover {
 	height: auto;
 }
 
-#first-proj {
-    padding: 0em;
-}
-
 @media (prefers-color-scheme: dark){
     
     html {
@@ -95,5 +96,14 @@ a:hover {
         --subtitle: hsl(0, 0%, 60%);
 
         --accent-color-primary: hsl(0, 40%, 50%);
+    }
+
+    html.light-theme {
+        --bg-color: hsl(0, 0%, 100%);
+        --text-color: hsl(0, 0%, 0%);
+        --subtitle: hsl(0, 0%, 33%);
+
+        /* Accent color data */
+        --accent-color-primary: hsl(0, 40%, 33%);  
     }
 }
