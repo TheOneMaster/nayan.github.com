@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="color-scheme" content="dark light">
+        <title>Nayan Nair</title>
+        <link rel="stylesheet" type="text/css" href="main.css">
+    </head>
+
+    <body>
+        <div id="wrapper">
+            <!-- Header text -->
+            <div id="header" class="center">
+                <span id="name">Nayan Nair</span><br>
+                <span id="subtitle">Data Science @ TU/e & UvT</span>
+            </div>
+
+            <!-- 2 columns -->
+            <div id="two-cols">
+                <!-- About section -->
+                <div>
+                    <h2>Hello!</h2>
+                    <p>I am a student at <a href="">Eindhoven University of Technology</a> pursuing a joint Bachelor's degree in Data Science in collaboration with Tilburg University.</p>
+                </div>
+                <div class="center">
+                    <p><a href="mailto:n.nair.business@gmail.com">n.nair.business@gmail.com</a></p>
+                    <p>
+                    [<a href="assets/resume.pdf">Resume</a>]
+                    [<a href="https://github.com/TheOneMaster">Github</a>]
+                    [<a href="https://www.linkedin.com/in/nayannair">LinkedIn</a>]
+                    </p>
+                </div>
+            </div>
+
+            <div>
+                <h2>Projects</h2>
+
+                <!-- Airline Sentiment Analysis -->
+                <div class="project" id="first-proj">
+                    <p>
+                        <a href="https://github.com/TheOneMaster/Sentiment-Analysis-for-Airlines" target="_blank">Airline Sentiment Analysis</a>
+                         was a project conducted as a part of my course. The goal of this project was to analyze a large dataset of
+                         twitter conversations between different airlines and their users. The tweets were examined on the basis of
+                         sentiment, which showed the general mood towards the airline. Additionally, the tweet threads were grouped 
+                         into conversations between individual users and the repective airline. This allowed to view whether the 
+                         replies of airlines to frustrated customers was helping customer sentiment (i.e., improving their mood).
+                    </p>
+                    <p>
+                        This project required the use of 3 major tools: the python library <a href="https://www.nltk.org/" target="_blank">nltk</a>
+                        for natural language processing, SQL, and version control in the form of Git. Natural Language Processing (NLP)
+                        was essential for this project as we needed to analyze tweets sent from people and determine the sentiment of 
+                        the tweet. SQL was used primarily for the storage and retrieval of the data obtained after preprocessing the raw
+                        twitter data. And finally, since this project was a collaboration with a group of fellow students, we needed to use
+                        Git to keep track of changes made to the code by each individual.
+                    </p>
+                </div>
+                
+                <!-- Covid Website -->
+                <div class="project">
+                    <p>
+                        <a href="https://z5a9a6709-zcdbd7826-gtw.qovery.io/" target="_blank">The Dutch Covid Dashboard</a> was a project that I undertook
+                        in the middle of 2020. My initial reason for creating it was to allow me to learn HTML and JavaScript, specifically
+                        the <a href="https://d3js.org/" target="_blank">d3</a> library, to create dashboards. However, as the amount of data increased over time,
+                        my JavaScript code could no longer handle it. Therefore, the website was re-written from the ground up in Python.
+                    </p>
+                    <p>
+                        The new website uses the <a href="https://plotly.com/dash/" target="_blank">dash</a> framework for creating the webpage and the 
+                        <a href="https://plotly.com/python/" target="_blank">plotly</a> framework for making the plots. This allows the plots to dynamically 
+                        accept new data from the RIVM, while remaining interactable by the general user. 
+                    </p>
+                    <p>
+                        <i>The original JavaScript website can be found <a href="https://theonemaster.github.io/covid/">here</a>. However, it's data source
+                        is outdated and hasn't been updated since April 2021.</i>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>
