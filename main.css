@@ -1,3 +1,14 @@
+html {
+    --bg-color: hsl(0, 0%, 100%);
+    --text-color: hsl(0, 0%, 0%);
+    --subtitle: hsl(0, 0%, 33%);
+
+    /* Accent color data */
+    --accent-color-primary: hsl(0, 40%, 33%);
+    
+    
+}
+
 body {
     font-family:
         system-ui,
@@ -11,23 +22,20 @@ body {
         'Open Sans',
         'Helvetica Neue',
         sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    
 }
 
 a {
-    color: #733;
+    color: var(--accent-color-primary);
     text-decoration: none;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid var(--bg-color);
 }
 
 a:hover {
-	color: #844;
-	border-bottom: 1px solid #844;
-}
-
-pre {
-	border: 1px solid #ccc;
-	border-radius:  4px;
-	padding: 20px;
+    filter: brightness(0.7);
+	border-bottom: 1px solid var(--accent-color-primary);
 }
 
 .center {
@@ -35,8 +43,7 @@ pre {
 }
 
 .project {
-    /* padding-top: 0.5em;
-    padding-bottom: 0.5em; */
+    padding-bottom: 0.5em;
     border-bottom-style: dotted;
     border-bottom-width: 1px;
 }
@@ -51,12 +58,12 @@ pre {
 }
 
 #subtitle {
-    color: #555;
+    color: var(--subtitle);
     font-size: 20pt;
 }
 
 #wrapper {
-    max-width: 900px;
+    max-width: 1000px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -77,5 +84,16 @@ pre {
 }
 
 #first-proj {
-    padding-top: 0em;
+    padding: 0em;
+}
+
+@media (prefers-color-scheme: dark){
+    
+    html {
+        --bg-color: hsl(0, 0%, 7%);
+        --text-color: hsl(0, 0%, 87%);
+        --subtitle: hsl(0, 0%, 60%);
+
+        --accent-color-primary: hsl(0, 40%, 50%);
+    }
 }
