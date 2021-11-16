@@ -5,7 +5,9 @@ html {
     --subtitle: hsl(0, 0%, 33%);
 
     /* Accent color data */
-    --accent-color-primary: hsl(0, 40%, 33%);  
+    --accent-color-primary: hsl(0, 40%, 33%);
+    
+    --link-underline: var(--accent-color-primary);
 }
 
 html.dark-theme {
@@ -14,6 +16,8 @@ html.dark-theme {
     --subtitle: hsl(0, 0%, 60%);
 
     --accent-color-primary: hsl(0, 40%, 50%);
+
+    --link-underline: var(--bg-color);
 }
 
 /* If dark mode is preferred */
@@ -26,6 +30,8 @@ html.dark-theme {
 
         --hue: 0;
         --accent-color-primary: hsl(var(--hue), 40%, 50%);
+
+        --link-underline: var(--bg-color);
     }
 
     html.light-theme {
@@ -34,7 +40,9 @@ html.dark-theme {
         --subtitle: hsl(0, 0%, 33%);
 
         /* Accent color data */
-        --accent-color-primary: hsl(var(--hue), 40%, 33%);  
+        --accent-color-primary: hsl(var(--hue), 40%, 33%);
+
+        --link-underline: var(--accent-color-primary);
     }
 }
 
@@ -46,8 +54,6 @@ html.color-theme-in-transition *:after {
   transition: all 750ms !important;
   transition-delay: 0 !important;
 }
-
-
 
 body {
     font-family:
@@ -70,7 +76,7 @@ body {
 a {
     color: var(--accent-color-primary);
     text-decoration: none;
-    border-bottom: 1px solid var(--bg-color);
+    border-bottom: 1px solid var(--link-underline);
 }
 
 a:hover {
@@ -78,6 +84,7 @@ a:hover {
 	border-bottom: 1px solid var(--accent-color-primary);
 }
 
+/* Class CSS */
 .center {
     text-align: center;
 }
@@ -87,6 +94,7 @@ a:hover {
     border-bottom-width: 1px;
 }
 
+/* ID CSS */
 #header {
     padding: 20px;
 }
