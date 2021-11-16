@@ -1,3 +1,4 @@
+/* Default light theme values */
 html {
     --bg-color: hsl(0, 0%, 100%);
     --text-color: hsl(0, 0%, 0%);
@@ -15,6 +16,29 @@ html.dark-theme {
     --accent-color-primary: hsl(0, 40%, 50%);
 }
 
+/* If dark mode is preferred */
+@media (prefers-color-scheme: dark){
+    
+    html {
+        --bg-color: hsl(0, 0%, 7%);
+        --text-color: hsl(0, 0%, 87%);
+        --subtitle: hsl(0, 0%, 60%);
+
+        --hue: 0;
+        --accent-color-primary: hsl(var(--hue), 40%, 50%);
+    }
+
+    html.light-theme {
+        --bg-color: hsl(0, 0%, 100%);
+        --text-color: hsl(0, 0%, 0%);
+        --subtitle: hsl(0, 0%, 33%);
+
+        /* Accent color data */
+        --accent-color-primary: hsl(var(--hue), 40%, 33%);  
+    }
+}
+
+/* Theme transition */
 html.color-theme-in-transition,
 html.color-theme-in-transition *,
 html.color-theme-in-transition *:before,
@@ -98,22 +122,81 @@ a:hover {
 	height: auto;
 }
 
-@media (prefers-color-scheme: dark){
-    
-    html {
-        --bg-color: hsl(0, 0%, 7%);
-        --text-color: hsl(0, 0%, 87%);
-        --subtitle: hsl(0, 0%, 60%);
-
-        --accent-color-primary: hsl(0, 40%, 50%);
-    }
-
-    html.light-theme {
-        --bg-color: hsl(0, 0%, 100%);
-        --text-color: hsl(0, 0%, 0%);
-        --subtitle: hsl(0, 0%, 33%);
-
-        /* Accent color data */
-        --accent-color-primary: hsl(0, 40%, 33%);  
-    }
+/* Dark mode toggle */
+#theme-toggle {
+    position: fixed;
+    top: 20px;
+    left: 20px;
 }
+
+.theme-switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+  
+/* Hide default HTML checkbox */
+.theme-switch input {
+opacity: 0;
+width: 0;
+height: 0;
+}
+
+/* The slider */
+.theme-slider {
+position: absolute;
+cursor: pointer;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color: #ccc;
+-webkit-transition: 0.4s;
+transition: 0.4s;
+}
+
+.theme-slider:before {
+position: absolute;
+content: "";
+height: 40px;
+width: 40px;
+left: 0px;
+bottom: 4px;
+top: 0;
+bottom: 0;
+margin: auto 0;
+-webkit-transition: 0.4s;
+transition: 0.4s;
+box-shadow: 0 0px 15px #2020203d;
+background: white url('https://i.ibb.co/FxzBYR9/night.png');
+background-repeat: no-repeat;
+background-position: center;
+}
+
+input:checked + .theme-slider {
+background-color: #2196f3;
+}
+
+input:focus + .theme-slider {
+box-shadow: 0 0 1px #2196f3;
+}
+
+input:checked + .theme-slider:before {
+-webkit-transform: translateX(24px);
+-ms-transform: translateX(24px);
+transform: translateX(24px);
+background: white url('https://i.ibb.co/7JfqXxB/sunny.png');
+background-repeat: no-repeat;
+background-position: center;
+}
+
+/* Rounded sliders */
+.theme-slider.round {
+border-radius: 34px;
+}
+
+.theme-slider.round:before {
+border-radius: 50%;
+}
+

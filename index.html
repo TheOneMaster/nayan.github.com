@@ -9,6 +9,14 @@
     </head>
 
     <body>
+        <!-- Toggle Theme Switch -->
+        <div id='theme-toggle'>
+            <label id='theme-label' class='theme-switch'>
+                <input type="checkbox" id='theme-slider' onchange="toggleTheme()">
+                <span class="theme-slider round"></span>
+            </label>
+        </div>
+
         <div id="wrapper">
             <!-- Header text -->
             <div id="header" class="center">
@@ -66,8 +74,9 @@
                     </p>
                     <p>
                         The new website uses the <a href="https://plotly.com/dash/" target="_blank">dash</a> framework for creating the webpage and the 
-                        <a href="https://plotly.com/python/" target="_blank">plotly</a> framework for making the plots. This allows the plots to dynamically 
-                        accept new data from the RIVM, while remaining interactable by the general user. 
+                        <a href="https://plotly.com/python/" target="_blank">plotly</a> framework for making the plots. The data for this website is pulled
+                        daily from the RIVM data for Covid-19 cases. This allows the plots to dynamically accept new data from the RIVM, while remaining 
+                        interactable by the general user. 
                     </p>
                     <p>
                         <i>The original JavaScript website can be found <a href="https://theonemaster.github.io/covid/">here</a>. However, its data source
@@ -78,4 +87,11 @@
         </div>
 
     </body>
+    <script>
+        const themeToggle = document.getElementById('theme-slider');
+        const mediaPref = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+        const themeVal = mediaPref ? false : true;
+        themeToggle.checked = themeVal;
+    </script>
 </html>
