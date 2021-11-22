@@ -47,13 +47,17 @@ html.dark-theme {
 }
 
 /* Theme transition */
-html.color-theme-in-transition,
-html.color-theme-in-transition *,
-html.color-theme-in-transition *:before,
-html.color-theme-in-transition *:after {
-  transition: all 750ms !important;
-  transition-delay: 0 !important;
+@supports(-moz-appearance:none){
+    
+    html.color-theme-in-transition,
+    html.color-theme-in-transition *,
+    html.color-theme-in-transition *:before,
+    html.color-theme-in-transition *:after {
+        transition: 750ms !important;
+        transition-delay: 0ms !important;
+    }
 }
+
 
 body {
     font-family:
@@ -70,6 +74,9 @@ body {
         sans-serif;
     background-color: var(--bg-color);
     color: var(--text-color);
+
+    -webkit-transition: linear 750ms;
+    -webkit-transition-property: all, background-color, color;
     
 }
 
