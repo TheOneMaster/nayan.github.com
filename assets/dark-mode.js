@@ -5,47 +5,16 @@ function setTheme(themeName, opt){
     window.setTimeout(() => {
         document.documentElement.classList.remove('color-theme-in-transition');
         }, 1000);
-    
-    if (opt){
-        document.documentElement.classList.add(themeName);
-    } else {
-        document.documentElement.classList.remove(themeName);
-    }
-    
+
+    document.documentElement.setAttribute("data-theme", themeName);
 }
 
 function toggleTheme(){
     
-    const mediaPref = window.matchMedia("(prefers-color-scheme: dark)");
-    let mediaTheme = mediaPref.matches ? "light-theme" : "dark-theme";
+    let themeVal = document.documentElement.getAttribute("data-theme");
+    themeVal = themeVal === 'dark' ? 'light': 'dark';
 
-    const slider = document.getElementById('theme-slider').checked;
-    let theme_final = null;
-    
-    if (mediaTheme=='dark-theme'){
-        theme_final = slider ? false: true;
-    } else{
-        theme_final = slider ? true: false;
-    }
-
-    setTheme(mediaTheme, theme_final);
+    setTheme(themeVal, null);
 }
-
-// Event Listeners
-
-// Change theme on Ctrl+Space Shortcut (for debugging purposes)
-document.addEventListener('keydown', function(event){
-    if (event.ctrlKey && event.key==' '){
-        const theme = window.matchMedia("(prefers-color-scheme: dark)");
-
-        if (theme.matches){
-            setTheme('light-theme')
-        } else{
-            setTheme('dark-theme');
-        }
-           
-    }
-});
-
 
 
