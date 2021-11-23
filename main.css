@@ -1,29 +1,31 @@
 /* Default light theme values */
-html {
+html,
+html[data-theme='light'] {
     --bg-color: hsl(0, 0%, 100%);
     --text-color: hsl(0, 0%, 0%);
     --subtitle: hsl(0, 0%, 33%);
 
     /* Accent color data */
-    --accent-color-primary: hsl(0, 40%, 33%);
+    --hue: 0;
+    --accent-color-primary: hsl(var(--hue), 40%, 33%);
     
-    --link-underline: var(--accent-color-primary);
+    --link-underline: hsl(0, 0%, 80%);
 }
 
-html.dark-theme {
+html[data-theme='dark'] {
     --bg-color: hsl(0, 0%, 7%);
     --text-color: hsl(0, 0%, 87%);
     --subtitle: hsl(0, 0%, 60%);
 
-    --accent-color-primary: hsl(0, 40%, 50%);
+    --hue: 0;
+    --accent-color-primary: hsl(var(--hue), 40%, 50%);
 
     --link-underline: var(--bg-color);
 }
 
-/* If dark mode is preferred */
-@media (prefers-color-scheme: dark){
-    
-    html {
+@media (prefers-color-scheme: dark) {
+
+    html{
         --bg-color: hsl(0, 0%, 7%);
         --text-color: hsl(0, 0%, 87%);
         --subtitle: hsl(0, 0%, 60%);
@@ -33,26 +35,6 @@ html.dark-theme {
 
         --link-underline: var(--bg-color);
     }
-
-    html.light-theme {
-        --bg-color: hsl(0, 0%, 100%);
-        --text-color: hsl(0, 0%, 0%);
-        --subtitle: hsl(0, 0%, 33%);
-
-        /* Accent color data */
-        --accent-color-primary: hsl(var(--hue), 40%, 33%);
-
-        --link-underline: var(--accent-color-primary);
-    }
-}
-
-/* Theme transition */
-html.color-theme-in-transition,
-html.color-theme-in-transition *,
-html.color-theme-in-transition *:before,
-html.color-theme-in-transition *:after {
-  transition: all 750ms !important;
-  transition-delay: 0 !important;
 }
 
 body {
@@ -71,6 +53,10 @@ body {
     background-color: var(--bg-color);
     color: var(--text-color);
     
+    -webkit-transition: 750ms linear 0ms;
+    -webkit-transition-property: all, background-color, color;
+
+    transition: all 750ms linear 0ms;
 }
 
 a {
@@ -177,7 +163,7 @@ margin: auto 0;
 -webkit-transition: 0.4s;
 transition: 0.4s;
 box-shadow: 0 0px 15px #2020203d;
-background: white url('https://i.ibb.co/FxzBYR9/night.png');
+background: white url('assets/images/night.png');
 background-repeat: no-repeat;
 background-position: center;
 }
@@ -194,7 +180,7 @@ input:checked + .theme-slider:before {
 -webkit-transform: translateX(24px);
 -ms-transform: translateX(24px);
 transform: translateX(24px);
-background: white url('https://i.ibb.co/7JfqXxB/sunny.png');
+background: white url('/assets/images/sunny.png');
 background-repeat: no-repeat;
 background-position: center;
 }

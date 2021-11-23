@@ -91,7 +91,10 @@
         const themeToggle = document.getElementById('theme-slider');
         const mediaPref = window.matchMedia("(prefers-color-scheme: dark)").matches;
 
-        const themeVal = mediaPref ? false : true;
+        let themeVal = mediaPref ? false : true;
         themeToggle.checked = themeVal;
+
+        themeVal = themeVal ? "light": "dark";
+        document.documentElement.setAttribute("data-theme", themeVal);
     </script>
 </html>
