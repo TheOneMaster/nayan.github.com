@@ -52,6 +52,9 @@ body {
         sans-serif;
     background-color: var(--bg-color);
     color: var(--text-color);
+
+    -webkit-transition: linear 750ms;
+    -webkit-transition-property: all, background-color, color;
     
     -webkit-transition: 750ms linear 0ms;
     -webkit-transition-property: all, background-color, color;

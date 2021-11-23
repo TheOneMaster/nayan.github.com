@@ -4,8 +4,7 @@
         <meta charset="utf-8">
         <meta name="color-scheme" content="dark light">
         <title>Nayan Nair</title>
-        <link rel="stylesheet" type="text/css" href="main.css">
-        <script src="assets/dark-mode.js" async></script>
+        <link rel="stylesheet" type="text/css" href="main.css">    
     </head>
 
     <body>
@@ -24,7 +23,7 @@
                 <span id="subtitle">Data Science @ TU/e & UvT</span>
             </div>
 
-            <!-- 2 columns -->
+            <!-- Intro Section -->
             <div id="two-cols">
                 <!-- About section -->
                 <div>
@@ -41,13 +40,17 @@
                 </div>
             </div>
 
+            <!-- Projects -->
             <div>
                 <h2>Projects</h2>
+
+                Most of my projects are fairly self-explanatory. These projects are either something I started as a hobby or
+                a project started for a course in university. 
 
                 <!-- Airline Sentiment Analysis -->
                 <div class="project">
                     <p>
-                        <a href="https://github.com/TheOneMaster/Sentiment-Analysis-for-Airlines" target="_blank">Airline Sentiment Analysis</a>
+                        <b><a href="https://github.com/TheOneMaster/Sentiment-Analysis-for-Airlines" target="_blank">Airline Sentiment Analysis</a></b>
                          was a project conducted as a part of my course. The goal of this project was to analyze a large dataset of
                          twitter conversations between different airlines and their users. The tweets were examined on the basis of
                          sentiment, which showed the general mood towards the airline. Additionally, the tweet threads were grouped 
@@ -67,8 +70,8 @@
                 <!-- Covid Website -->
                 <div class="project">
                     <p>
-                        <a href="https://z5a9a6709-zcdbd7826-gtw.qovery.io/" target="_blank">The Dutch Covid Dashboard</a> was a project that I undertook
-                        in the middle of 2020. My initial reason for creating it was to allow me to learn HTML and JavaScript, specifically
+                        <b><a href="https://z5a9a6709-zcdbd7826-gtw.qovery.io/" target="_blank">The Dutch Covid Dashboard</a></b> was a project that 
+                        I undertook in the middle of 2020. My initial reason for creating it was to allow me to learn HTML and JavaScript, specifically
                         the <a href="https://d3js.org/" target="_blank">d3</a> library, to create dashboards. However, as the amount of data increased over time,
                         my JavaScript code could no longer handle it. Therefore, the website was re-written from the ground up in Python.
                     </p>
@@ -84,9 +87,22 @@
                     </p>
                 </div>
             </div>
+
+            <!-- Goals -->
+            <div>
+                <h2>Goals</h2>
+
+                A few projects that I haven't had the time to get to yet. 
+                <ul>
+                    <li>Create a facial detection system using OpenCV</li>
+                    <li>Learn how to use and setup AWS</li>
+                </ul>
+                
+            </div>
         </div>
 
     </body>
+    <script src="assets/dark-mode.js" async></script>
     <script>
         const themeToggle = document.getElementById('theme-slider');
         const mediaPref = window.matchMedia("(prefers-color-scheme: dark)").matches;
